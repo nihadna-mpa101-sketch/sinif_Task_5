@@ -47,6 +47,29 @@ class Rectangle : IShape
 }
 */
 //Task14------------------------------------------------------------
+/*public enum OrderStatus
+{
+    Paid,
+    Pending,
+    Cancelled
+}
+public class Program
+{
+    public static void Main()
+    {
+        Console.WriteLine(ParseOrderStatus("paid"));
+        Console.WriteLine(ParseOrderStatus("PAID"));
+        Console.WriteLine(ParseOrderStatus("foo"));
+    }
+    public static OrderStatus? ParseOrderStatus(string input)
+    {
+        if (Enum.TryParse<OrderStatus>(input, ignoreCase: true, out var status))
+        {
+            return status;
+        }
+        return null;
+    }
+}*/
 //Task15------------------------------------------------------------
 /*{
     static void Main()
@@ -81,7 +104,24 @@ class Product
         Price = price;
     }
 }*/
+//Task17------------------------------------------------------------
+/*class Program
+{
+    static void Main()
+    {
+        List<string> list = new List<string> { "apple", "banana", "Apricot", "avocado", "apple", "Almond", "fig" };
 
+        var result = list
+            .Distinct()
+            .Where(x => x.Length >= 4)
+            .Where(x => x.StartsWith("A", StringComparison.OrdinalIgnoreCase))
+            .OrderBy(x => x)
+            .Select(x => x.ToUpper())
+            .ToList();
+
+        result.ForEach(Console.WriteLine);
+    }
+}*/
 //Task18------------------------------------------------------------
 /*class Product
 {
@@ -125,4 +165,32 @@ class Program
         }
     }
 }*/
+
+//Task20--------------------------------------------------------
+/*string[] gunler = { "Bazarertesi", "Cersenbeaxsami", "Cersenbe", "Cumeaxsami", "Cume", "Senbe", "Bazar" };
+double[] temperatur = new double[7];
+for (int i = 0; i < 7; i++)
+{
+    Console.Write($"{gunler[i]} ucun temperaturu daxil edin:");
+    temperatur[i] = Convert.ToDouble(Console.ReadLine());
+}
+double toplam = 0;
+for (int i = 0; i < 7; i++)
+{
+    toplam += temperatur[i];
+}
+double orta = toplam / 7;
+double maxTemp = temperatur[0];
+double minTemp = temperatur[0];
+int maxIndex = 0;
+int minIndex = 0;
+for (int i = 1; i < 7; i++)
+{
+    if (temperatur[i] > maxTemp) { maxTemp = temperatur[i]; maxIndex = i; }
+    if (temperatur[i] < minTemp) { minTemp = temperatur[i]; minIndex = i; }
+}
+Console.WriteLine($"\nHefte erzinde orta temperatur:{orta:F2}°C");
+Console.WriteLine($"En isti gun:{gunler[maxIndex]},{maxTemp}°C");
+Console.WriteLine($"En soyuq gun:{gunler[minIndex]},{minTemp}°C");
+*/
 
